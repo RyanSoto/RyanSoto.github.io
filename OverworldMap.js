@@ -159,9 +159,9 @@ window.OverworldMaps = {
         talking: [
           {
             events: [
-              {type: "textMessage", text: "I'm kind of busy, alright?", faceHero: "npc1"},
-              {type: "textMessage", text: "Get lost dude!"},
-              {who: "hero", type: "walk", direction: "down"},
+              {type: "textMessage", text: "I heard this interactive resume was originally going to be a game", faceHero: "npc1"},
+              {type: "textMessage", text: "Seems like he decided to turn his hobby into a profession."},
+              // {who: "hero", type: "walk", direction: "down"},
             ]
           }
         ]
@@ -181,8 +181,8 @@ window.OverworldMaps = {
         talking: [
           {
             events: [
-              {type: "textMessage", text: "Is it just me or is the dude acting shady?", faceHero: "npc2"},
-              {type: "textMessage", text: "He's making me think a lot."},
+              {type: "textMessage", text: "If you press Q, the original game is revealed", faceHero: "npc2"},
+              {type: "textMessage", text: "You can accept the order and try to find the pick up."},
             ]
           }
         ]
