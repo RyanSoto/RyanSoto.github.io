@@ -160,7 +160,7 @@ window.OverworldMaps = {
           {
             events: [
               {type: "textMessage", text: "I heard this interactive resume was originally going to be a game", faceHero: "npc1"},
-              {type: "textMessage", text: "Seems like he decided to turn his hobby into a profession."},
+              {type: "textMessage", text: "He instead turned his hobby into a profession."},
               // {who: "hero", type: "walk", direction: "down"},
             ]
           }
