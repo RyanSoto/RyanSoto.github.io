@@ -5,8 +5,8 @@ class Person extends GameObject {
     this.isStanding = false;
     this.intentPosition = null; // [x,y]
     this.speed = 1
-    this.isBiking = config.isBiking || null;
     this.isPlayerControlled = config.isPlayerControlled || false;
+    
 
     this.directionUpdate = {
       "up": ["y", -this.speed],

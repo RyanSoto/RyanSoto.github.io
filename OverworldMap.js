@@ -59,9 +59,6 @@ class OverworldMap {
       if (object.type == "Hero") {
         instance = new Hero(object);
       }
-      if (object.type == "BikeHero") {
-        instance = new BikeHero(object);
-      }
       if (object.type == "Person") {
         instance = new Person(object);
       }
@@ -70,6 +67,9 @@ class OverworldMap {
       }
       if (object.type === "Destination") {
         instance = new Destination(object);
+      }
+      if (object.type === "BigSign") {
+        instance = new BigSign(object);
       }
 
       
@@ -141,12 +141,14 @@ window.OverworldMaps = {
     configObjects: {
       hero: {
         type: "Hero",
+        useShadow: true,
         isPlayerControlled: true,
         x: utils.withGrid(12),
         y: utils.withGrid(23),
       },
       npc1: {
         type:"Person",
+        useShadow: true,
         x: utils.withGrid(26),
         y: utils.withGrid(21),
         src: "/images/characters/people/npc1.png",
@@ -168,6 +170,7 @@ window.OverworldMaps = {
       },
       npc2: {
         type:"Person",
+        useShadow: true,
         x: utils.withGrid(10),
         y: utils.withGrid(21),
         src: "/images/characters/people/npc1.png",
@@ -181,12 +184,28 @@ window.OverworldMaps = {
         talking: [
           {
             events: [
-              {type: "textMessage", text: "If you press Q, the original game is revealed", faceHero: "npc2"},
-              {type: "textMessage", text: "You can accept the order and try to find the pick up."},
+              {type: "textMessage", text: "If you press Q, the original game idea is revealed", faceHero: "npc2"},
+              // {type: "textMessage", text: "You can accept an order and fulfill the delivery."},
             ]
           }
         ]
       },
+        BigSign0: ({
+        type: "BigSign",
+        src: "images/Objects/bigsign1left.png",
+        x: utils.withGrid(47), //19
+        y: utils.withGrid(22), //35
+        // storyFlag: "HAVEREAD",
+
+      }),
+      BigSign1: ({
+        type: "BigSign",
+        src: "images/Objects/bigsign1right.png",
+        x: utils.withGrid(48), //19
+        y: utils.withGrid(22), //35
+        // storyFlag: "HAVEREAD",
+
+      }),
       // pickUp0: ({
       //   type: "Delivery",
       //   x: utils.withGrid(13), //19

@@ -44,6 +44,8 @@ class OverworldEvent {
 
   }
 
+
+
   // bike(resolve) {
   //   const who = this.map.gameObjects[ this.event.who ];
   //   who.startBehavior({
@@ -75,6 +77,20 @@ class OverworldEvent {
     })
     message.init( document.querySelector(".game-container") )
   }
+
+  shoutMessage(resolve) {
+
+    if (this.event.faceHero) {
+      const obj = this.map.gameObjects[this.event.faceHero];
+      obj.direction = utils.oppositeDirection(this.map.gameObjects["hero"].direction);
+    }
+    const message = new ShoutMessage({
+      text: this.event.text,
+      onComplete: () => resolve()
+    })
+    message.init( document.querySelector(".game-container") )
+  }
+
 
   changeMap(resolve) {
     //Deactivate old objects

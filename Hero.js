@@ -4,8 +4,8 @@ class Hero extends GameObject {
     this.movingProgressRemaining = 0;
     this.isStanding = false;
     this.intentPosition = null; // [x,y]
-    this.speed = 1
-    this.isBiking = config.isBiking || false;
+    this.speed = 4
+    this.isBiking = true;
     this.isPlayerControlled = config.isPlayerControlled || false;
     this.directionUpdate = {
       "up": ["y", -this.speed],
@@ -14,6 +14,8 @@ class Hero extends GameObject {
       "right": ["x", this.speed],
     }
     this.standBehaviorTimeout;
+
+
 
   }
 
@@ -36,7 +38,7 @@ class Hero extends GameObject {
   }
 
   startBehavior(state, behavior) {
-
+    // this.isBiking = true;
     this.toggleBikeOn()
     this.toggleBikeOff()
     if (!this.isMounted) {
@@ -45,7 +47,39 @@ class Hero extends GameObject {
 
     //Set character direction to whatever behavior has
     this.direction = behavior.direction;
+
+    // let i = 0
+    // if (behavior.type === "walk10") {
+    //   //Stop here if space is not free
+    //   while (i < 10) {
+    //     if (state.map.isSpaceTaken(this.x, this.y, this.direction)) {
+
+          
+    //         behavior.retry && setTimeout(() => {
+    //           this.startBehavior(state, behavior)
+    //         }, 10);
+    //         return;
+          
+    //     }
+
+    //     //Ready to walk or bike!
     
+    //     if (this.isBiking === true) {
+    //       this.movingProgressRemaining = 4;
+    //     } else {
+    //     this.movingProgressRemaining = 16;}
+
+    //     //Add next position intent
+    //     const intentPosition = utils.nextPosition(this.x,this.y, this.direction)
+    //     this.intentPosition = [
+    //       intentPosition.x,
+    //       intentPosition.y,
+    //     ]
+
+    //     this.updateSprite(state);
+    //     i++;
+    //   }
+    // }
     if (behavior.type === "walk") {
       //Stop here if space is not free
       if (state.map.isSpaceTaken(this.x, this.y, this.direction)) {
@@ -109,8 +143,8 @@ class Hero extends GameObject {
   toggleBikeOn() { 
     new KeyPressListener("KeyB", () => {
       if (this.movingProgressRemaining === 0) {
-        // console.log("Bike On")
-        // console.trace(this.toggleBikeOn)
+        console.log("Bike On")
+        // console.trace(this.toggleBikeOff)
         this.isBiking = true;
         this.speed = 4;
         this.directionUpdate = {
@@ -118,10 +152,10 @@ class Hero extends GameObject {
           "down": ["y", this.speed],
           "left": ["x", -this.speed],
           "right": ["x", this.speed],
-        }
-      }
-    }) 
-  }
+        }}
+      })
+  } 
+
 
   toggleBikeOff() { 
     new KeyPressListener("KeyN", () => {
