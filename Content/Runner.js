@@ -1,6 +1,6 @@
 window.Runners = {
     "You": {
-        name: "Jangle Leg",
+        name: "You",
         enr: 90,
         maxEnr: 100,
         money: 0,

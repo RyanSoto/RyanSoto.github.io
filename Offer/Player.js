@@ -1,5 +1,5 @@
 class Player{
-    constructor(config, offer) {
+    constructor(config) {
         Object.keys(config).forEach(key => {
             this[key] = config[key];
         })
@@ -51,7 +51,7 @@ class Player{
     
         this.playerElement = document.createElement("img");
         this.playerElement.classList.add("player1");
-        this.playerElement.setAttribute("src", this.src );
+        // this.playerElement.setAttribute("src", this.src );
         this.playerElement.setAttribute("alt", this.name );
         this.playerElement.setAttribute("data-team", this.team );
     

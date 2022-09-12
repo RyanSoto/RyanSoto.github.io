@@ -14,17 +14,26 @@ class Destination extends GameObject{
 
         this.talking = [
             {
-                required: [this.storyFlag = "ORDER_TAKEN"],
+                required: ["ORDER_TAKEN", this.storyFlag ],
                 events: [
                     { type: "textMessage", text: "You leave the delivery in the receptacle" },
                     { type: "removeStoryFlag", flag: this.storyFlag },
+                    { type: "removeStoryFlag", flag: "ORDER_TAKEN" },
+                    { type: "removeStoryFlag", flag: "CONFIRMED_PICKUP" },
                     { type: "finishDelivery"}
                 ]
             },
             {
+            required: ["CONFIRMED_PICKUP"],
+            events: [
+            { type: "textMessage", text:  "They are not expecting an order."},
+
+            ]   
+        },
+            {
                 // required: [this.storyFlag],
                 events: [
-                { type: "textMessage", text: "They are not expecting an order." },
+                { type: "textMessage", text: "You don't have an order to deliver." },
 
                 ]   
             },

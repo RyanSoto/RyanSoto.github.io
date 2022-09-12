@@ -11,18 +11,20 @@ class Delivery extends GameObject{
             currentAnimation: "Empty"
         });
         this.storyFlag = config.storyFlag;
-        this.pickUp = window.playerState.players.p1.orders;
+
+        
+        
 
         
 
         this.talking = [
             {
-                required: [ (this.storyFlag = "ORDER_ACCEPTED") , (this.storyFlag = this.pickUp)  ],
+                required: [ "ORDER_ACCEPTED"  , this.storyFlag, "CONFIRMED_PICKUP"  ],
                 events: [
 
                     { type: "textMessage", text: "You grab the order" },
                     { type: "removeStoryFlag", flag: "ORDER_ACCEPTED"  },
-                    { type: "removeStoryFlag", flag: this.pickUp },
+                    { type: "removeStoryFlag", flag: this.storyFlag },
                     { type: "addStoryFlag", flag: "ORDER_TAKEN" },
                     
 
@@ -30,18 +32,30 @@ class Delivery extends GameObject{
                 ]   
             },
             {
-                required: [this.storyFlag = "ORDER_ACCEPTED"],
+                required: ["ORDER_ACCEPTED" , this.storyFlag],
                 events: [
-                    {type: "textMessage", text: "Is this the right order?"},
-                    { type: "addStoryFlag", flag: this.storyFlag },
+                    { type: "textMessage", text: "Is this the right order?" },
+                    { type: "textMessage", text: "Yep, This is it." },
+                    { type: "addStoryFlag", flag: "CONFIRMED_PICKUP"   },
+                    // { type: "addStoryFlag", flag: "JUST_TOOK"   },
+                 
                 ]
             },
             {
-                required: [this.storyFlag = "ORDER_TAKEN"],
+                required: ["ORDER_ACCEPTED"],
                 events: [
-                    {type: "textMessage", text: "You just picked up an order from here."}
+                    { type: "textMessage", text: "Is this the right order?"},
+                    { type: "textMessage", text: "Nah, This ain't it chief."},
+                    // { type: "addStoryFlag", flag: this.storyFlag   },
+                 
                 ]
             },
+            // {
+            //     required: ["ORDER_TAKEN" , "CONFIRMED_PICKUP", "JUST_TOOK" ],
+            //     events: [
+            //         {type: "textMessage", text: "You just picked up an order from here."}
+            //     ]
+            // },
             {
                 events: [
                     { type: "textMessage", text: "There is no order at this pick up." },
@@ -56,11 +70,8 @@ class Delivery extends GameObject{
     }
 
     update() {
-        this.pickUp = window.playerState.players.p1.orders;
-        // console.log(this.pickUp)
         
-        this.storyFlags = this.storyFlag
-        this.sprite.currentAnimation = playerState.storyFlags[this.storyFlag = "ORDER_ACCEPTED"]
+        this.sprite.currentAnimation = playerState.storyFlags["ORDER_ACCEPTED"]
             ? "Full"
             : "Empty";
         

@@ -206,42 +206,61 @@ window.OverworldMaps = {
         // storyFlag: "HAVEREAD",
 
       }),
-      // pickUp0: ({
-      //   type: "Delivery",
-      //   x: utils.withGrid(13), //19
-      //   y: utils.withGrid(23), //35
-      //   storyFlag: "PICKUP_0"
-      // }),
-      // pickUp1: ({
-      //   type: "Delivery",
-      //   x: utils.withGrid(13), //19
-      //   y: utils.withGrid(25), //35
-      //   storyFlag: "PICKUP_1"
-      // }),
-      // pickUp2: ({
-      //   type: "Delivery",
-      //   x: utils.withGrid(13), //19
-      //   y: utils.withGrid(23), //35
-      //   // storyFlag: "OFFER_ACCEPTED"
-      // }),
-      // pickUp3: ({
-      //   type: "Delivery",
-      //   x: utils.withGrid(13), //19
-      //   y: utils.withGrid(23), //35
-      //   // storyFlag: "OFFER_ACCEPTED"
-      // }),
-      // pickUp4: ({
-      //   type: "Delivery",
-      //   x: utils.withGrid(13), //19
-      //   y: utils.withGrid(23), //35
-      //   // storyFlag: "OFFER_ACCEPTED"
-      // }),
-      // dropOff1: ({
-      //   type: "Destination",
-      //   x: utils.withGrid(14), //36
-      //   y: utils.withGrid(23), //21
-      //   // storyFlag: "LEFT_DELIVERY"
-      // }),
+      pickUp0: ({
+        type: "Delivery",
+        x: utils.withGrid(64), //64
+        y: utils.withGrid(19), //19
+        storyFlag: "PICKUP_0"
+      }),
+      pickUp1: ({
+        type: "Delivery",
+        x: utils.withGrid(67), //19
+        y: utils.withGrid(32), //35
+        storyFlag: "PICKUP_1"
+      }),
+      pickUp2: ({
+        type: "Delivery",
+        x: utils.withGrid(76), //19
+        y: utils.withGrid(19), //35
+        storyFlag: "PICKUP_2"
+      }),
+      pickUp3: ({
+        type: "Delivery",
+        x: utils.withGrid(83), //19
+        y: utils.withGrid(33), //35
+        storyFlag: "PICKUP_3"
+      }),
+      pickUp4: ({
+        type: "Delivery",
+        x: utils.withGrid(85), //19
+        y: utils.withGrid(16), //35
+        storyFlag: "PICKUP_4"
+      }),
+      dropOff0: ({
+        type: "Destination",
+        x: utils.withGrid(19), //65
+        y: utils.withGrid(35), //19
+        storyFlag: "DROPOFF_0"
+      }),
+      dropOff1: ({
+        type: "Destination",
+        x: utils.withGrid(36), //65
+        y: utils.withGrid(21), //19
+        storyFlag: "DROPOFF_1"
+      }),
+      dropOff2: ({
+        type: "Destination",
+        x: utils.withGrid(27), //65
+        y: utils.withGrid(21), //19
+        storyFlag: "DROPOFF_2"
+      }),
+      dropOff3: ({
+        type: "Destination",
+        x: utils.withGrid(30), //65
+        y: utils.withGrid(35), //19
+        storyFlag: "DROPOFF_3"
+      }),
+
     },
     walls: {
       [utils.asGridCoord(28,20)] : true,

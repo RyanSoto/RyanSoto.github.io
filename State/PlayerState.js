@@ -6,7 +6,7 @@ class PlayerState {
             playerId: "You",
             enr: 50,
             maxEnr: 100,
-            money: 100,
+            money: 0,
             xp: 90,
             maxXp: 100,
             level: 1,

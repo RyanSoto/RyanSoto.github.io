@@ -48,38 +48,7 @@ class Hero extends GameObject {
     //Set character direction to whatever behavior has
     this.direction = behavior.direction;
 
-    // let i = 0
-    // if (behavior.type === "walk10") {
-    //   //Stop here if space is not free
-    //   while (i < 10) {
-    //     if (state.map.isSpaceTaken(this.x, this.y, this.direction)) {
 
-          
-    //         behavior.retry && setTimeout(() => {
-    //           this.startBehavior(state, behavior)
-    //         }, 10);
-    //         return;
-          
-    //     }
-
-    //     //Ready to walk or bike!
-    
-    //     if (this.isBiking === true) {
-    //       this.movingProgressRemaining = 4;
-    //     } else {
-    //     this.movingProgressRemaining = 16;}
-
-    //     //Add next position intent
-    //     const intentPosition = utils.nextPosition(this.x,this.y, this.direction)
-    //     this.intentPosition = [
-    //       intentPosition.x,
-    //       intentPosition.y,
-    //     ]
-
-    //     this.updateSprite(state);
-    //     i++;
-    //   }
-    // }
     if (behavior.type === "walk") {
       //Stop here if space is not free
       if (state.map.isSpaceTaken(this.x, this.y, this.direction)) {
